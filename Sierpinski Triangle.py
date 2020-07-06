@@ -11,7 +11,6 @@ class Point():
     canvas.create_rectangle(self.x, self.y, self.x + 1, self.y + 1, outline = self.color, width = 4)
  
 class Example(Frame):
-  
     def __init__(self, parent):
         Frame.__init__(self, parent , background = "black")   
         self.parent = parent        
