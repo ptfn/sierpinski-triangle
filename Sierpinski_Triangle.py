@@ -9,7 +9,7 @@ class Point():
     self.color = color
 
   def paint(self, canvas):
-    canvas.create_rectangle(self.x, self.y, self.x + 1, self.y + 1, outline = self.color, width = 1)
+    canvas.create_rectangle(self.x, self.y, self.x + 1, self.y + 1, outline = self.color, width = 0.5)
  
 class Example(Frame):
   
@@ -38,19 +38,22 @@ class Example(Frame):
         first.paint(canvas)
 
         def calcPoint(p1:Point, p2:Point):
-            if p1.x > p2.x: 
-                x = ((p1.x - p2.x) / 2) + p2.x 
-            else:
-                x = ((p2.x - p1.x) / 2) + p1.x
+            # if p1.x > p2.x: 
+            #     x = ((p1.x - p2.x) / 2) + p2.x 
+            # else:
+            #     x = ((p2.x - p1.x) / 2) + p1.x
 
-            if p1.y > p2.y: 
-                y = ((p1.y - p2.y) / 2) + p2.y
-            else:
-                y = ((p2.y - p1.y) / 2) + p1.y
+            # if p1.y > p2.y: 
+            #     y = ((p1.y - p2.y) / 2) + p2.y
+            # else:
+            #     y = ((p2.y - p1.y) / 2) + p1.y
+            x = (p1.x + p2.x) / 2
+            y = (p1.y + p2.y) / 2
             return Point(x,y,"blue")
 
         i = 0
         num = int(sys.argv[1]) # argument
+        
         while i < num:
             random_dot = random.randrange(0,300)
           
